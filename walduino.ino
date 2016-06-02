@@ -16,18 +16,15 @@ byte guy_y = random(63);
 word score = 0;
 
 void setup() {
-  // put your setup code here, to run once:
-  Serial.begin(9400);
   arduboy.begin();
   arduboy.setFrameRate(30);
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
-  
-  // Input
   if (!(arduboy.nextFrame()))
     return;
+    
+  // Input
   if (arduboy.pressed(RIGHT_BUTTON))
     if (circle_x < 127)
       circle_x += circle_spd;
